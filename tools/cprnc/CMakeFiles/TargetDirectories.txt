@@ -1,0 +1,3 @@
+/Users/asha/Developer/WACCM/cime/tools/cprnc/CMakeFiles/cprnc.dir
+/Users/asha/Developer/WACCM/cime/tools/cprnc/CMakeFiles/edit_cache.dir
+/Users/asha/Developer/WACCM/cime/tools/cprnc/CMakeFiles/rebuild_cache.dir

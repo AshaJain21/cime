@@ -1,0 +1,2 @@
+# Hashes of file build rules.
+af6bf4a46656b46006e02062ed2e3a97 compare_vars_mod.F90

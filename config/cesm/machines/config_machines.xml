@@ -1491,32 +1491,32 @@ This allows using a different mpirun command to launch unit tests
       changing the machine name (MACH="homebrew") to your machine name.
 
     </DESC>
-    <NODENAME_REGEX> something.matching.your.machine.hostname </NODENAME_REGEX>
+    <NODENAME_REGEX>tl-wpa8631p-1.home</NODENAME_REGEX>
     <OS>Darwin</OS>
     <COMPILERS>gnu</COMPILERS>
-    <MPILIBS>mpich</MPILIBS>
-    <CIME_OUTPUT_ROOT>$ENV{HOME}/projects/scratch</CIME_OUTPUT_ROOT>
-    <DIN_LOC_ROOT>$ENV{HOME}/projects/cesm-inputdata</DIN_LOC_ROOT>
-    <DIN_LOC_ROOT_CLMFORC>$ENV{HOME}/projects/ptclm-data</DIN_LOC_ROOT_CLMFORC>
-    <DOUT_S_ROOT>$ENV{HOME}/projects/scratch/archive/$CASE</DOUT_S_ROOT>
-    <BASELINE_ROOT>$ENV{HOME}/projects/baselines</BASELINE_ROOT>
-    <CCSM_CPRNC>$ENV{HOME}/cesm/tools/cprnc/cprnc</CCSM_CPRNC>
+    <MPILIBS>openmpi</MPILIBS>
+    <CIME_OUTPUT_ROOT>/Users/asha/Developer/WACCM/outputs/projects/scratch</CIME_OUTPUT_ROOT>
+    <DIN_LOC_ROOT>/Users/asha/Developer/WACCM/inputs</DIN_LOC_ROOT>
+    <DIN_LOC_ROOT_CLMFORC>/Users/asha/Developer/WACCM/inputs/ptclm-data</DIN_LOC_ROOT_CLMFORC>
+    <DOUT_S_ROOT>/Users/asha/Developer/WACCM/outputs/projects/scratch/archive/$CASE</DOUT_S_ROOT>
+    <BASELINE_ROOT>/Users/asha/Developer/WACCM/inputs/cesm_baselines</BASELINE_ROOT>
+    <CCSM_CPRNC>/Users/asha/Developer/WACCM/cime/tools/cprnc</CCSM_CPRNC>
     <GMAKE>make</GMAKE>
-    <GMAKE_J>4</GMAKE_J>
+    <GMAKE_J>8</GMAKE_J>
     <BATCH_SYSTEM>none</BATCH_SYSTEM>
-    <SUPPORTED_BY>__YOUR_NAME_HERE__</SUPPORTED_BY>
-    <MAX_TASKS_PER_NODE>8</MAX_TASKS_PER_NODE>
-    <MAX_MPITASKS_PER_NODE>4</MAX_MPITASKS_PER_NODE>
-    <mpirun mpilib="default">
+    <SUPPORTED_BY>AshaJain</SUPPORTED_BY>
+    <MAX_TASKS_PER_NODE>36</MAX_TASKS_PER_NODE>
+    <MAX_MPITASKS_PER_NODE>36</MAX_MPITASKS_PER_NODE>
+    <mpirun mpilib="openmpi">
       <executable>mpirun</executable>
       <arguments>
-	<arg name="anum_tasks"> -np {{ total_tasks }}</arg>
-	<arg name="labelstdout">-prepend-rank</arg>
+            <arg name="anum_tasks"> -np {{ total_tasks }}</arg>
+            <arg name="labelstdout">-prepend-rank</arg>
       </arguments>
     </mpirun>
     <module_system type="none"/>
     <environment_variables>
-      <env name="NETCDF_PATH">/usr/local</env>
+      <env name="NETCDF_PATH">/opt/local</env>
     </environment_variables>
   </machine>
 
@@ -1684,7 +1684,7 @@ This allows using a different mpirun command to launch unit tests
   <machine MACH="lawrencium-lr3">
     <DESC>Lawrencium LR3 cluster at LBL, OS is Linux (intel), batch system is SLURM</DESC>
     <OS>LINUX</OS>
-    <COMPILERS>intel</COMPILERS>
+    <COMPILERS>intel,gnu</COMPILERS>
     <MPILIBS>openmpi</MPILIBS>
     <CIME_OUTPUT_ROOT>/global/scratch/$ENV{USER}</CIME_OUTPUT_ROOT>
     <DIN_LOC_ROOT>/global/scratch/$ENV{USER}/cesm_input_datasets/</DIN_LOC_ROOT>
